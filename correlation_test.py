@@ -13,9 +13,6 @@ def newData(options, n):
 
 def showData(dataA, dataB):
 
-    # copy data for editing.
-    dataA = list(dataA)
-    dataB = list(dataB)
     if len(dataA) != len(dataB):
         raise ValueError("Datasets must be equal length")
 
@@ -32,8 +29,8 @@ def showData(dataA, dataB):
     xs2[-1] -= .05
 
     # Duplicate first point, to create a horizontal line.
-    dataA.insert(0, dataA[0])
-    dataB.insert(0, dataB[0])
+    dataA = dataA[:1] + dataA
+    dataB = dataB[:1] + dataB
 
     # Show data as step functions.
     ax.step(xs, dataA, color="g")
