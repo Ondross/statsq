@@ -101,7 +101,7 @@ if __name__ == "__main__":
     correlations.sort(key=lambda x: abs(x.coefficient), reverse=True)
 
     # Plot top five correlations.
-    for c in correlations[0:max(5, numDatasets)]:
+    for c in correlations[0:min(5, numDatasets)]:
         showData(c.dataA, c.dataB)
         print c.coefficient, c.offset
 
